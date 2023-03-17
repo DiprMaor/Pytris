@@ -69,11 +69,11 @@ class Universal:
     def on_init(self):
         self.scr.clear()
         self.scr.refresh()
-        self.wnd = curses.newwin(self.maxY-20, self.maxX-200, 1, 1)
+        self.wnd = curses.newwin(self.maxY-10, self.maxX-200, 1, 1)
         self.wnd.border()
         self.wnd.refresh()
 
-        self.wnd_score = curses.newwin(self.maxY-61, self.maxX-220, 1, self.maxX-199)
+        self.wnd_score = curses.newwin(self.maxY-10, self.maxX-220, 1, self.maxX-199)
         self.wnd_score.border()
         self.wnd_score.addstr(2, 2, "Score: " + str(self.scores))
         self.wnd_score.addstr(3, 2, "Lines: " + str(self.lines))
@@ -156,6 +156,7 @@ class Universal:
         self.on_init()
 
         self.glass_ful.render(self.wnd)
+        #---------------------------------------->>>>>>
         # self.figures[0].render(self.wnd)
         # self.figures[1].render(self.wnd)
         # self.figures[2].render(self.wnd)
